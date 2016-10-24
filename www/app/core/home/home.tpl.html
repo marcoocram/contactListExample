@@ -1,0 +1,16 @@
+<ion-view view-title="" class="home">
+    <ion-header-bar align-title="center" class="bar-positive item-input-inset">
+        <label class="item-input-wrapper">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="Filtrar" ng-model="search">
+        </label>
+    </ion-header-bar>
+
+    <ion-content class="has-header">
+        <ion-list>
+            <ion-item collection-repeat="contact in vm.contacts | orderBy: 'displayName' | filter:search" href="tel:{{ contact.phoneNumbers[0].value }}">
+                {{ contact.displayName }}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
